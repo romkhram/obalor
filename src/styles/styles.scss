@@ -1,0 +1,223 @@
+$pagebg: #fafbfd;
+$pageborder: #f1f1f2;
+$cardbg: #fff;
+$textplaceholder: #a8a8a8;
+$textdsbl: #a1a1a1;
+$chipbg: #c5c7dc;
+$nameareabg: #eaecf5;
+$gridgap: 20px;
+$blockpadding: 16px;
+$stringpadding: 10px;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  background: $pagebg;
+  font-family: 'Roboto', sans-serif;
+}
+
+.checkbox {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 2px solid $textdsbl;
+  color: $textdsbl;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: $gridgap;
+}
+
+#app {
+  width: 1180px;
+}
+
+.icon {
+  color: $textdsbl;
+}
+
+.search-input {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  border: 1px solid $pageborder;
+  border-radius: 12px;
+  height: 32px;
+  padding: 0 8px;
+  background: $cardbg;
+
+  input {
+    border: none;
+    margin-left: 8px;
+    font-size: 12px;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $textdsbl;
+    }
+  }
+}
+
+.cards-wrapper {
+  margin-top: $gridgap;
+  display: grid;
+  grid-gap: $gridgap;
+  grid-template-columns: repeat(auto-fit, 220px);
+
+  .card-wrapper {
+    position: relative;
+
+    .card {
+      font-size: 14px;
+      border: 1px solid $cardbg;
+      border-radius: 10px;
+      background: $cardbg;
+      padding: $blockpadding 0 0;
+
+      .card-header {
+        display: flex;
+        padding: 0 $blockpadding;
+        font-size: 14px;
+        font-weight: 600;
+
+        .check-wrapper {
+          flex: 0 0 16px;
+        }
+      }
+
+      .card-content {
+        padding: 16px;
+
+        .price {
+          font-weight: 500;
+          padding-bottom: $stringpadding;
+        }
+
+        .title {
+          font-weight: 500;
+        }
+
+        .inn {
+          color: $textdsbl;
+        }
+      }
+
+      .chip-wrapper {
+        display: none;
+        flex-wrap: wrap;
+        padding: $blockpadding 0 0;
+
+        .chip {
+          margin: 0 8px 8px 0;
+          background: $chipbg;
+          text-transform: uppercase;
+          font-size: 11px;
+          color: $cardbg;
+          line-height: 12px;
+          padding: 4px 10px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .card-name {
+        background: $nameareabg;
+        min-height: 40px;
+        padding: 0 $blockpadding;
+        display: none;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+
+      }
+      .card-footer {
+        padding: 0 $blockpadding $blockpadding;
+
+        .content {
+          color: $textdsbl;
+
+          .date {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .card {
+        position: absolute;
+        z-index: 1;
+        border: 1px solid $pageborder;
+        box-shadow: 2px 2px 8px 0px rgba(34, 60, 80, 0.2);
+
+        .chip-wrapper, .card-name, .checkbox {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+@for $i from 0 through 100 {
+  .oblr-ma-#{$i} {
+    margin: $i + px !important;
+  }
+  .oblr-mx-#{$i} {
+    margin-right: $i + px !important;
+    margin-left: $i + px !important;
+  }
+  .oblr-my-#{$i} {
+    margin-top: $i + px !important;
+    margin-bottom: $i + px !important;
+  }
+  .oblr-mt-#{$i} {
+    margin-top: $i + px !important;
+  }
+  .oblr-mr-#{$i} {
+    margin-right: $i + px !important;
+  }
+  .oblr-mb-#{$i} {
+    margin-bottom: $i + px !important;
+  }
+  .oblr-ml-#{$i} {
+    margin-left: $i + px !important;
+  }
+
+  .oblr-pa-#{$i} {
+    padding: $i + px !important;
+  }
+  .oblr-px-#{$i} {
+    padding-right: $i + px !important;
+    padding-left: $i + px !important;
+  }
+  .oblr-py-#{$i} {
+    padding-top: $i + px !important;
+    padding-bottom: $i + px !important;
+  }
+  .oblr-pt-#{$i} {
+    padding-top: $i + px !important;
+  }
+  .oblr-pr-#{$i} {
+    padding-right: $i + px !important;
+  }
+  .oblr-pb-#{$i} {
+    padding-bottom: $i + px !important;
+  }
+  .oblr-pl-#{$i} {
+    padding-left: $i + px !important;
+  }
+}
